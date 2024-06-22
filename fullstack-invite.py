@@ -4,6 +4,11 @@ from dotenv import load_dotenv
 import requests
 import logging
 
+app = Flask(__name__)
+@app.route('/')
+def home():
+    return "Welcome to Full Stack Invite!"
+
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 
