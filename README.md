@@ -3,3 +3,5 @@ Development, Network and System Management, and Self-Hosting Chat
 
 
 Stars and Pull Requests are welcome!
+
+[learn more](https://docs.github.com/en/desktop/working-with-your-remote-repository-on-github-or-github-enterprise/creating-an-issue-or-pull-request-from-github-desktop)
