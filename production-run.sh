@@ -1,18 +1,21 @@
 #!/bin/bash
 
-# Load environment variables from .env file
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Load environment variables from .env file in the script's directory
 set -a
-source /home/yourusername/Full-Stack-Chat/.env
+source "$SCRIPT_DIR/.env"
 set +a
 
 SERVICE_PATH="/etc/systemd/system/fullstackinvite.service"
 SERVICE_NAME="fullstackinvite.service"
 USER=$(whoami)
-WORKING_DIR="/home/$USER/Full-Stack-Chat"
-ENV_PATH="/home/$USER/Full-Stack-Chat/venv/bin"
+WORKING_DIR="$SCRIPT_DIR"
+ENV_PATH="$WORKING_DIR/venv/bin"
 PORT=${OPEN_PORT:-5000}
 
-# Function to create the service file called if the service does not exist
+# Function to create the service file
 create_service_file() {
     cat <<EOF > $SERVICE_PATH
 [Unit]
