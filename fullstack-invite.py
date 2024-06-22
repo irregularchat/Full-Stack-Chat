@@ -57,7 +57,7 @@ def handle_webhook():
 def post_signal_invite(repo_name, pr_number):
     comment_url = f"https://api.github.com/repos/{repo_name}/issues/{pr_number}/comments"
     headers = {'Authorization': f'token {GITHUB_TOKEN}'}
-    comment = {'body': f'Thank you for your pull request! Join our Signal chat here: {SIGNAL_INVITE_LINK}'}
+    comment = {'body': f'Join the IrregularChat Full Stack Signal chat here: {SIGNAL_INVITE_LINK}'}
     
     logging.info(f"Posting comment to URL: {comment_url}")
     try:
