@@ -3,8 +3,6 @@
 # Detect OS
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     OS="linux"
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    OS="mac"
 else
     echo "Unsupported OS. Exiting..."
     exit 1
