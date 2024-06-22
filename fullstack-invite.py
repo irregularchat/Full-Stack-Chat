@@ -4,21 +4,25 @@ from dotenv import load_dotenv
 import requests
 import logging
 
+# Initialize Flask app
 app = Flask(__name__)
-@app.route('/')
-def home():
-    return "Welcome to Full Stack Invite!"
+
+# Load environment variables
+load_dotenv()
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 
-app = Flask(__name__)
-load_dotenv()
-
+# Environment variables
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 SIGNAL_INVITE_LINK = os.getenv('SIGNAL_INVITE_LINK')
 OPEN_PORT = os.getenv('OPEN_PORT', 5000)  # Default to 5000 if OPEN_PORT not set
 REPO_NAME = os.getenv('REPO_NAME')
+
+@app.route('/')
+def home():
+    return "Welcome to Full Stack Invite!"
+
 @app.route('/webhook', methods=['POST'])
 def handle_webhook():
     if request.method == 'POST':
