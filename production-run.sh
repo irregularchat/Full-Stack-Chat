@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Detect OS
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    OS="linux"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    OS="mac"
+else
+    echo "Unsupported OS. Exiting..."
+    exit 1
+fi
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
