@@ -27,6 +27,7 @@ signature = f"sha256={mac.hexdigest()}"
 print("Generated signature:", signature)
 
 # Define the URL for the webhook
+# Update this to your ngrok URL
 webhook_url = "https://fullstackinvite.irregularchat.com/webhook"
 
 # Set the headers including the generated signature
@@ -36,7 +37,7 @@ headers = {
 }
 
 # Send the POST request
-response = requests.post(webhook_url, headers=headers, data=payload, verify=False)  # Set verify=False to bypass SSL verification for testing
+response = requests.post(webhook_url, headers=headers, data=payload, verify=True)
 
 # Print the response status and body
 print("Response status:", response.status_code)
