@@ -27,8 +27,8 @@ signature = f"sha256={mac.hexdigest()}"
 print("Generated signature:", signature)
 
 # Define the URL for the webhook
-webhook_url = "https://fullstackinvite.irregularchat.com/webhook"
-# webhook_url = "https://c076-172-59-56-90.ngrok-free.app/webhook"
+# webhook_url = "https://fullstackinvite.irregularchat.com/webhook"
+webhook_url = "https://c076-172-59-56-90.ngrok-free.app/webhook"
 
 # Set the headers including the generated signature
 headers = {
