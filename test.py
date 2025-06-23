@@ -17,7 +17,7 @@ if not REPO_NAME:
     raise ValueError("REPO_NAME environment variable not set")
 
 # Define the payload for testing, using the REPO_NAME from the environment
-payload = f'{{"pull_request": {{"number": 123}}, "repository": {{"full_name": "{REPO_NAME}"}}}}'.encode('utf-8')
+payload = f'{{"pull_request": {{"number": 11}}, "repository": {{"full_name": "{REPO_NAME}"}}}}'.encode('utf-8')
 
 # Generate the HMAC SHA-256 signature
 mac = hmac.new(GITHUB_SECRET.encode(), msg=payload, digestmod=hashlib.sha256)
@@ -25,9 +25,11 @@ signature = f"sha256={mac.hexdigest()}"
 
 # Print the signature
 print("Generated signature:", signature)
+print("Repo name:", REPO_NAME)
 
 # Define the URL for the webhook
-webhook_url = "https://fullstackinvite.irregularchat.com/webhook"
+# webhook_url = "https://fullstackinvite.irregularchat.com/webhook"
+webhook_url = "https://f06f-172-59-56-90.ngrok-free.app/webhook"
 
 # Set the headers including the generated signature
 headers = {
