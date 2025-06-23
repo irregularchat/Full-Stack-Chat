@@ -17,7 +17,7 @@ if not REPO_NAME:
     raise ValueError("REPO_NAME environment variable not set")
 
 # Define the payload for testing, using the REPO_NAME from the environment
-payload = f'{{"pull_request": {{"number": 123}}, "repository": {{"full_name": "{REPO_NAME}"}}}}'.encode('utf-8')
+payload = f'{{"pull_request": {{"number": 1}}, "repository": {{"full_name": "{REPO_NAME}"}}}}'.encode('utf-8')
 
 # Generate the HMAC SHA-256 signature
 mac = hmac.new(GITHUB_SECRET.encode(), msg=payload, digestmod=hashlib.sha256)
